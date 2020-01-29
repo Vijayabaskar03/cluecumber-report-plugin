@@ -61,7 +61,7 @@ preheadline=""
 preheadlineLink="">
 
     <#if hasCustomParameters()>
-        <div class="row">
+        <div class="row" id="custom-parameters">
             <@page.card width="12" title="" subtitle="" classes="customParameters">
                 <table class="table table-fit">
                     <tbody>
@@ -88,7 +88,7 @@ preheadlineLink="">
         </div>
     </#if>
 
-    <div class="row">
+    <div class="row" id="scenario-summary">
         <@page.card width="6" title="Scenario Results" subtitle="" classes="">
             <@page.graph />
         </@page.card>
@@ -122,15 +122,15 @@ preheadlineLink="">
                         <br>
                         ${totalNumberOfSkippedScenarios} skipped <@common.status status="skipped"/>
                     <#else>
-                        <a href="javascript:;"
+                        <a href="javascript:"
                            onclick="document.location.hash='anchor-passed';">${totalNumberOfPassedScenarios}
                             passed</a> <@common.status status="passed"/>
                         <br>
-                        <a href="javascript:;"
+                        <a href="javascript:"
                            onclick="document.location.hash='anchor-failed';">${totalNumberOfFailedScenarios}
                             failed</a> <@common.status status="failed"/>
                         <br>
-                        <a href="javascript:;"
+                        <a href="javascript:"
                            onclick="document.location.hash='anchor-skipped';">${totalNumberOfSkippedScenarios}
                             skipped</a> <@common.status status="skipped"/>
                     </#if>
